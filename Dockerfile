@@ -9,7 +9,7 @@ RUN apt update && apt install -y libboost-dev libboost-program-options-dev libbo
 
 # Install jupyter, matplotlib and vowpalwabbit
 RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache notebook==5.* matplotlib pandas vowpalwabbit
+    pip install --no-cache notebook==5.* matplotlib pandas vowpalwabbit numpy sklearn
 
 # Create user with a home directory
 ARG NB_USER
