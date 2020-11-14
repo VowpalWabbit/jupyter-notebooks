@@ -1,15 +1,8 @@
 FROM python:3.7-slim
 
-# Install dependencies for VowpalWabbit
-RUN apt update && apt install -y libboost-dev libboost-program-options-dev libboost-system-dev \
- libboost-thread-dev libboost-math-dev libboost-test-dev zlib1g-dev cmake g++ libboost-python-dev \
- && apt-get clean autoclean \
- && apt-get autoremove -y \
- && rm -rf /var/lib/{apt,dpkg,cache,log}
-
 # Install jupyter, matplotlib and vowpalwabbit
 RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache notebook==5.* matplotlib pandas vowpalwabbit==8.8.0 numpy sklearn
+    pip install --no-cache notebook==5.* matplotlib pandas vowpalwabbit==8.9.0 numpy sklearn
 
 # Create user with a home directory
 ARG NB_USER
